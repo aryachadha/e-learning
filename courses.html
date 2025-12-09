@@ -1,10 +1,104 @@
-<!DOCTYPE html>
+<!DOC<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - E-Learning Hub</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.9rem; font-weight: 700; color: #5a67d8; }
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+        .nav-links a {
+            text-decoration: none; color: #4a5568; font-weight: 600;
+            position: relative; transition: all 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #5a67d8; }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: #5a67d8; bottom: -8px; left: 50%;
+            transform: translateX(-50%); transition: width 0.3s;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .courses-container {
+            padding: 140px 5% 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .courses-container h1 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 4rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .course-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background: #f8fafc;
+            padding: 20px;
+        }
+        .course-card h2 {
+            font-size: 1.7rem;
+            margin: 1.2rem 1.5rem 0.5rem;
+            color: #2d3748;
+        }
+        .course-card p {
+            color: #718096;
+            margin: 0 1.5rem 1.8rem;
+            font-size: 1.1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            margin-top: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; }
+            .nav-links { margin-top: 1rem; gap: 1.5rem; }
+            .courses-container h1 { font-size: 2.8rem; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,31 +110,33 @@
             </ul>
         </nav>
     </header>
+
     <main class="courses-container">
         <h1>Available Courses</h1>
         <div class="course-list">
             <a href="courses/python.html" class="course-card">
-                <img src="assets/images/python.png" alt="Python">
+                <img src="https://img.icons8.com/color/240/python.png" alt="Python">
                 <h2>Python Programming</h2>
                 <p>From beginner to advanced</p>
             </a>
             <a href="courses/java.html" class="course-card">
-                <img src="assets/images/java.png" alt="Java">
+                <img src="https://img.icons8.com/color/240/java-coffee-cup-logo.png" alt="Java">
                 <h2>Java Development</h2>
                 <p>Object-oriented mastery</p>
             </a>
             <a href="courses/react.html" class="course-card">
-                <img src="assets/images/react.png" alt="React">
+                <img src="https://img.icons8.com/color/240/react-native.png" alt="React">
                 <h2>React.js</h2>
                 <p>Modern frontend development</p>
             </a>
             <a href="courses/cpp.html" class="course-card">
-                <img src="assets/images/cpp.png" alt="C++">
+                <img src="https://img.icons8.com/color/240/c-plus-plus-logo.png" alt="C++">
                 <h2>C++ Programming</h2>
                 <p>High-performance coding</p>
             </a>
         </div>
     </main>
+
     <footer>
         <p>© 2025 E-Learning Hub. All rights reserved.</p>
     </footer>
